@@ -29,13 +29,6 @@ action "Ripper" {
 
 action "Reporter" {
   uses = "./"
-  needs = ["Ripper", "debug"]
+  needs = ["Ripper"]
   secrets = ["GITHUB_TOKEN"]
 }
-
-/*
-
-action "Reporter" {
-  uses = "./../aws-instance-ripper-issue-reporter"
-}
-*/
