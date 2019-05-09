@@ -3,6 +3,11 @@ workflow "AWS-Rippper" {
   resolves = ["Reporter"]
 }
 
+
+action "debug" {
+  uses = "actions/bin/debug@master"
+}
+
 action "Filters Labeled Issues" {
   uses = "actions/bin/filter@master"
   args = "action labeled"
@@ -21,8 +26,9 @@ action "Ripper" {
 }
 
 action "Reporter" {
-  uses = "."
-  needs = ["Ripper"]
+  uses = "./"
+  needs = ["Ripper", "debug"]
+  secrets = ["GITHUB_TOKEN"]
 }
 
 /*
