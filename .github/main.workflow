@@ -24,6 +24,7 @@ action "Ripper" {
   env = {
     DRY_RUN = "true"
   }
+  secrets = ["AWS_SECRET_ACCESS_KEY", "AWS_ACCESS_KEY_ID"]
 }
 
 action "Reporter" {
