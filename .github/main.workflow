@@ -3,7 +3,6 @@ workflow "AWS-Rippper" {
   resolves = ["Reporter"]
 }
 
-
 action "debug" {
   uses = "actions/bin/debug@master"
 }
@@ -23,6 +22,9 @@ action "Ripper" {
   needs = ["Filters label radar"]
   uses = "helaili/aws-instance-ripper@master"
   secrets = ["AWS_SECRET_ACCESS_KEY", "AWS_ACCESS_KEY_ID"]
+  env = {
+    DRY_RUN = "true"
+  }
 }
 
 action "Reporter" {
