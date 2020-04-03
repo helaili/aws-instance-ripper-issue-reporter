@@ -8,6 +8,7 @@ try {
 
   if (regions) {
     regions.forEach(region => {
+      core.debug(`Processing ${region}`)
       let regionTable = generateRegionTable(data[region])
       report = report.concat(`### [${region}](https://console.aws.amazon.com/ec2/v2/home?region=${region}#Instances:sort=tag:Name)\n${regionTable}\n`)
     })
@@ -23,7 +24,7 @@ try {
 
 function generateRegionTable(reportData) {
   let markdownTable = null
-
+  core.debug(`Generating table for ${reportData}`)
   if (reportData.length !== 0) {
     markdownTable = `Instance ID|Name|Owner|Stop|Terminate\n-|-|-|-|-\n`
   }
