@@ -1,6 +1,6 @@
 {
   "name": "aws-instance-ripper-issue-reporter",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "GitHub Actions to display the report from the aws-instance-ripper action as an issue comment",
   "main": "entrypoint.js",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "keywords": [
     "github-action",
-    "action",
+    "actions",
     "aws"
   ],
   "author": "Alain Hélaïli",
@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/helaili/aws-instance-ripper-issue-reporter",
   "dependencies": {
+    "@actions/core": "^1.2.3",
+    "@actions/github": "^2.1.1",
     "actions-toolkit": "2.0.0"
   }
 }
