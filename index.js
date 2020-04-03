@@ -3,7 +3,7 @@ const github = require('@actions/github')
 
 try {
   const data = core.getInput('data')
-  const regions = Object.getOwnPropertyNames(JSON(data))
+  const regions = Object.getOwnPropertyNames(JSON.parse(data))
   let report = ''
 
   if (regions) {
