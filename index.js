@@ -8,7 +8,7 @@ try {
 
   if (regions) {
     regions.forEach(region => {
-      let regionTable = generateRegionTable(data.get(region))
+      let regionTable = generateRegionTable(data[region])
       report = report.concat(`### [${region}](https://console.aws.amazon.com/ec2/v2/home?region=${region}#Instances:sort=tag:Name)\n${regionTable}\n`)
     })
   } else {
