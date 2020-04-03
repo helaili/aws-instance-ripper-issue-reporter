@@ -25,11 +25,14 @@ try {
 function generateRegionTable(reportData) {
   let markdownTable = null
   core.debug(`Generating table for ${reportData}`)
+
+  /*
   if (reportData.length !== 0) {
     markdownTable = `Instance ID|Name|Owner|Stop|Terminate\n-|-|-|-|-\n`
   }
   reportData.forEach(instance => {
     markdownTable = markdownTable.concat(`${instance.instanceId}|${instance.name.value}|${instance.owner.value}|${instance.stop.value}|${instance.terminate.value}\n`)
   })
+  */
   return markdownTable
 }
